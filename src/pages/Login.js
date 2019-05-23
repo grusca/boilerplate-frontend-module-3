@@ -1,5 +1,7 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import { withAuth } from "../lib/AuthProvider";
+import logo from '../img/logo.png'
 
 class Login extends Component {
   state = {
@@ -21,23 +23,16 @@ class Login extends Component {
   render() {
     const { username, password } = this.state;
     return (
-      <form onSubmit={this.handleFormSubmit}>
-        <label>Username:</label>
-        <input
-          type="text"
-          name="username"
-          value={username}
-          onChange={this.handleChange}
-        />
-        <label>Password:</label>
-        <input
-          type="password"
-          name="password"
-          value={password}
-          onChange={this.handleChange}
-        />
-        <input type="submit" value="Login" />
-      </form>
+      <div className='signup'>
+        <img src={logo} className="logo" alt="Logo" />
+        <h1> statuss </h1>
+        <form onSubmit={this.handleFormSubmit}>
+          <input type="text" name="username" placeholder="Username" value={username} onChange={this.handleChange}/>
+          <input type="password" name="password" placeholder="Password" value={password} onChange={this.handleChange}/>
+          <input className="button" type="submit" value="Login" />
+        </form>
+        <p> Don't have an account? <Link to={"/signup"}> Signup </Link> </p>
+      </div>
     );
   }
 }

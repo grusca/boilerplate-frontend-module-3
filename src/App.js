@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Switch } from "react-router-dom";
+import './App.css'
 
 import Navbar from "./components/Navbar";
 import Private from "./pages/Private";
@@ -15,8 +16,7 @@ class App extends Component {
     return (
       <AuthProvider>
         <div className="container">
-          <h1>Basic React Authentication</h1>
-          <Navbar />
+          {/*<Navbar /> */}
           <Switch>
             <AnonRoute path="/signup" component={Signup} />
             <AnonRoute path="/login" component={Login} />

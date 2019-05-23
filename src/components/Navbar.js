@@ -13,8 +13,8 @@ class Navbar extends Component {
           </>
         ) : (
           <>
-            <Link to="/login">Login</Link>
-            <Link to="/signup">Signup</Link>
+            <Link className="button" to="/login">Login</Link>
+            <Link className="button" to="/signup">Signup</Link>
           </>
         )}
       </div>
