@@ -7,7 +7,7 @@ class Signup extends Component {
   state = {
     username: "",
     password: "",
-    company:""
+    company: ""
   };
 
   handleFormSubmit = event => {

@@ -28,28 +28,15 @@ export const withAuth = Comp => {
 };
 
 class AuthProvider extends Component {
-  state = {
-    isLoggedin: false,
-    user: null,
-    isLoading: true
-  };
+  state = { isLoggedin: false, user: null, isLoading: true};
 
   componentDidMount() {
-    auth
-      .me()
+    auth.me()
       .then(user => {
-        this.setState({
-          isLoggedin: true,
-          user,
-          isLoading: false
-        });
+        this.setState({ isLoggedin: true, user, isLoading: false });
       })
       .catch(() => {
-        this.setState({
-          isLoggedin: false,
-          user: null,
-          isLoading: false
-        });
+        this.setState({isLoggedin: false, user: null, isLoading: false});
       });
   }
 
