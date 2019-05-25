@@ -1,10 +1,9 @@
 // components/clients/ClientList.js
-
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
-import AddClient from './AddClient'; // <== !!!
+import AddClient from './AddClient'; 
 
 class ClientList extends Component {
 	state = { 

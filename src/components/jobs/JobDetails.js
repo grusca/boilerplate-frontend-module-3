@@ -1,8 +1,6 @@
 // components/jobs/JobDetails.js
 import React, { Component } from 'react';
 import axios from 'axios';
-import Higher from './../hoc/Higher'
-
 
 class JobDetails extends Component {
 	state = {};

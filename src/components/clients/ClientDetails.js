@@ -54,7 +54,7 @@ class ClientDetails extends Component {
         const theClient = apiResponse.data;
         this.setState(theClient);
       })
-      .catch((err) => console.log(err));
+      .catch( err => console.log(err));
   }
   
   render() {
