@@ -4,19 +4,19 @@ const { Consumer, Provider } = React.createContext();
 
 export { Consumer };
 
-export const withAuth = Comp => {
+export const withAuth = WrappedComponent => {
   return class WithAuth extends Component {
     render() {
       return (
         <Consumer>
-          {authStore => {
+          {(valueFromProvider) => {
             return (
-              <Comp
-                login={authStore.login}
-                signup={authStore.signup}
-                user={authStore.user}
-                logout={authStore.logout}
-                isLoggedin={authStore.isLoggedin}
+              <WrappedComponent
+                login={valueFromProvider.login}
+                signup={valueFromProvider.signup}
+                user={valueFromProvider.user}
+                logout={valueFromProvider.logout}
+                isLoggedin={valueFromProvider.isLoggedin}
                 {...this.props}
               />
             );
@@ -41,9 +41,9 @@ class AuthProvider extends Component {
   }
 
   signup = user => {
-    const { username, password } = user;
+    const { username, password, company } = user;
     auth
-      .signup({ username, password })
+      .signup({ username, password, company })
       .then(user => {
         this.setState({
           isLoggedin: true,

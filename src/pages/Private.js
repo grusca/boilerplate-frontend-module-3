@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { withAuth } from "../lib/AuthProvider";
+import ClientDetails from '../components/clients/ClientDetails';
 
 
 class Private extends Component {
@@ -8,6 +9,7 @@ class Private extends Component {
     return (
       <div>
         <h1>Welcome {user.username}</h1>
+        <ClientDetails/>
         <button className='button' onClick={logout}> Logout </button>
       </div>
     );

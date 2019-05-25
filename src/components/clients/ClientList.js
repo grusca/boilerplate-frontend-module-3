@@ -31,10 +31,10 @@ class ClientList extends Component {
           { 
             listOfClients.map( (client) => {
             return (
-              <div key={client._id} className='client'>
+              <div key={client._id} className='clientCard'>
                 <Link to={`/clients/${client._id}`}>
-                  <h3>{client.title}</h3>
-                  <p>{client.description} </p>
+                  <h3>{client.firstname} {client.lastname} </h3>
+                  <p></p>
                 </Link>
               </div>
             )})

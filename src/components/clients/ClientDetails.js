@@ -38,9 +38,9 @@ class ClientDetails extends Component {
     
     axios.delete(`http://localhost:5000/api/clients/${id}`)
     	.then( () => this.props.history.push('/clients') )
-    	.catch( (err) => console.log(err));
+    	.catch( err => console.log(err));
   }
-
+ 
 
   componentDidMount() {
     this.getSingleClient();

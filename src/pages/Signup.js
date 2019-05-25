@@ -26,11 +26,11 @@ class Signup extends Component {
     return (
       <div className='signup'>
         <img src={logo} className="logo" alt="Logo" />
-        <h1> statuss </h1>
+        <h1> status </h1>
         <form onSubmit={this.handleFormSubmit}>
           <input type="text" name="Company" placeholder="Company" value={company} onChange={this.handleChange} />
-          <input type="text" name="username" placeholder="Username" value={username} onChange={this.handleChange}/> 
-          <input type="password" name="password" placeholder="Password" value={password} onChange={this.handleChange} />
+          <input type="text" name="username" placeholder="Username" value={username} onChange={this.handleChange} required/> 
+          <input type="password" name="password" placeholder="Password" value={password} onChange={this.handleChange} required/>
           <input className="button" type="submit" value="Signup" />
         </form>
         <p> Already have an account? <Link to={"/login"}> Login</Link></p>
