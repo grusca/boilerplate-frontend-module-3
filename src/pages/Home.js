@@ -15,7 +15,7 @@ class Login extends Component {
         <form>
         <Link className="home button" to={"/login"}> Login </Link> 
         <Link className="home button" to={"/signup"}> Signup </Link> 
-        <Link className="home button" to={"/signup"}> Track status </Link> 
+        <Link className="home button" to={"/trackstatus"}> Track status </Link> 
         </form>
       </div>
     );

@@ -9,7 +9,8 @@ import PrivateRoute from "./components/PrivateRoute";
 import Private from "./pages/Private";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
-import Home from "./pages/Home"
+import Home from "./pages/Home";
+import TrackStatus from "./pages/TrackStatus";
 
 
 import ClientList from './components/clients/ClientList';
@@ -25,6 +26,7 @@ class App extends Component {
             <AnonRoute exact path="/" component={Home} />
             <AnonRoute path="/signup" component={Signup} />
             <AnonRoute path="/login" component={Login} />
+            <AnonRoute path="/Trackstatus" component={TrackStatus} />
             <PrivateRoute path="/private" component={Private} />
             <PrivateRoute exact path="/clients" component={ClientList} />
             <PrivateRoute exact path="/clients/:id" component={ClientDetails} />

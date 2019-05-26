@@ -13,7 +13,7 @@ class AddClient extends Component {
     const {firstname, lastname } = this.state;
     
     axios.post("http://localhost:5000/api/clients", { firstname, lastname })
-      .then( () => {
+      .then(() => {
         console.log(firstname)
         console.log(this.props.currentUser)
         this.props.getData();
