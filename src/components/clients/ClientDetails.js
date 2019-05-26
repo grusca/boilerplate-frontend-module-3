@@ -8,14 +8,14 @@ import AddJob from './../jobs/AddJob';
 class ClientDetails extends Component {
   constructor(props){
     super(props);
-    this.state = {firstname: '', description: '', jobs: []};
+    this.state = {firstname: '', lastname: '', jobs: []};
   }
   
   renderEditForm = () => {
     /* Check if `renderEditForm` is triggered before the state gets populated. 
      If the state is empty nothing can be passed to `EditClient` as the
     value in `theClient` prop to populate the form  */
-    if (!this.state.firstname && !this.state.description) return <p>LOADING</p>; 
+    if (!this.state.firstname && !this.state.lastname) return <p>LOADING</p>; 
     else {
       return (
         <EditClient theClient={this.state}
@@ -26,7 +26,7 @@ class ClientDetails extends Component {
   }
 
   renderAddJobForm = () => {
-    if(!this.state.firstname && !this.state.description) return  <p>LOADING</p>; 
+    if(!this.state.firstname && !this.state.lastname) return  <p>LOADING</p>; 
     else {
       return <AddJob clientID={this.state._id} getTheClient={this.getSingleClient} />
           // pass the clientID and method `getSingleClient()` to AddJob component
@@ -61,7 +61,7 @@ class ClientDetails extends Component {
     return (
       <div>
         <h1>{this.state.firstname}</h1>
-        <h4>{this.state.description}</h4>
+        <h4>{this.state.lastname}</h4>
         <Link to={'/clients'}> <button>Back</button> </Link>
 
         { this.renderEditForm() }   {/* Render the form in here */}

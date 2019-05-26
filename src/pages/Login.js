@@ -27,8 +27,8 @@ class Login extends Component {
         <img src={logo} className="logo" alt="Logo" />
         <h1> statuss </h1>
         <form onSubmit={this.handleFormSubmit}>
-          <input type="text" name="username" placeholder="Username" value={username} onChange={this.handleChange} required/>
-          <input type="password" name="password" placeholder="Password" value={password} onChange={this.handleChange} required/>
+          <input type="text" name="username" placeholder="Username" value={username} onChange={this.handleChange}/>
+          <input type="password" name="password" placeholder="Password" value={password} onChange={this.handleChange}/>
           <input className="button" type="submit" value="Login" />
         </form>
         <p> Don't have an account? <Link to={"/signup"}> Signup </Link> </p>
