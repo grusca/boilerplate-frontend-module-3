@@ -34,7 +34,7 @@ class ClientDetails extends Component {
 
   deleteClient = () => {
     const { id } = this.props.match.params;
-    console.log(this.props.history)
+
     
     clientService.removeClient(id)
       .then( () => this.props.history.push('/clients') )

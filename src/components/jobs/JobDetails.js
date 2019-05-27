@@ -31,11 +31,12 @@ class JobDetails extends Component {
   render(){
     return(
       <div>
-        <h3>JOB DETAILS</h3>
-        <h2>{this.state.title}</h2>
+        <h1>{this.props.client}</h1>
+        <h2>JOB DETAILS</h2>
+        <h3>{this.state.title}</h3>
         <p>{this.state.description}</p>
         <ProgressBar getProgress={this.state.progress}/>
-        <button onClick={this.props.history.goBack} >Go Back</button>
+        <button className="button" onClick={this.props.history.goBack} >Go Back</button>
       </div>
     )
   }

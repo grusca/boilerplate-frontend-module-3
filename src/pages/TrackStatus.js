@@ -27,7 +27,7 @@ class TrackStatus extends Component {
         <img src={logo} className="logo" alt="Logo" />
         <h1> Track Statuss </h1>
         <form onSubmit={this.handleFormSubmit}>
-          <input type="text" name="codenumber" placeholder="Enter 6-digit code" value={codenumber} onChange={this.handleChange}/>
+          <input type="text" name="codenumber" placeholder="Enter keycode" value={codenumber} onChange={this.handleChange}/>
           <input className="button" type="submit" value="Track" />
         </form>
       </div>
