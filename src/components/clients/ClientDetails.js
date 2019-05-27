@@ -1,6 +1,6 @@
 // components/clients/ClientDetails.js
 import React, { Component } from 'react';
-import axios from 'axios';
+import clientService from '../../lib/client-service';
 import { Link } from 'react-router-dom';
 import EditClient from './EditClient';
 import AddJob from './../jobs/AddJob';
@@ -29,19 +29,18 @@ class ClientDetails extends Component {
     if(!this.state.firstname && !this.state.lastname) return  <p>LOADING</p>; 
     else {
       return <AddJob clientID={this.state._id} getTheClient={this.getSingleClient} />
-          // pass the clientID and method `getSingleClient()` to AddJob component
-    }
+    }     // pass the clientID and method `getSingleClient()` to AddJob component
   }
 
   deleteClient = () => {
     const { id } = this.props.match.params;
+    console.log(this.props.history)
     
-    axios.delete(`http://localhost:5000/api/clients/${id}`)
-    	.then( () => this.props.history.push('/clients') )
+    clientService.removeClient(id)
+      .then( () => this.props.history.push('/clients') )
     	.catch( err => console.log(err));
   }
  
-
   componentDidMount() {
     this.getSingleClient();
   }
@@ -49,7 +48,7 @@ class ClientDetails extends Component {
   getSingleClient = () => {
     const { id } = this.props.match.params;
   
-    axios.get(`http://localhost:5000/api/clients/${id}`)
+    clientService.getClient(id)
       .then( (apiResponse) =>{
         const theClient = apiResponse.data;
         this.setState(theClient);
@@ -57,21 +56,23 @@ class ClientDetails extends Component {
       .catch( err => console.log(err));
   }
   
+  
   render() {
     return (
       <div>
-        <h1>{this.state.firstname}</h1>
-        <h4>{this.state.lastname}</h4>
-        <Link to={'/clients'}> <button>Back</button> </Link>
+        <h3>{this.state.firstname} {this.state.lastname}</h3>
+
+        <Link to={'/clients'}> <button className="button">Back</button> </Link>
 
         { this.renderEditForm() }   {/* Render the form in here */}
-        <button onClick={() => this.deleteClient()}> Delete client </button>
+        <button className="button" onClick={() => this.deleteClient()}> Delete client </button>
 
         { this.renderAddJobForm() }
 
         { 
           (this.state.jobs.length === 0) ?
           <h2>NO JOBS TO DISPLAY</h2>
+
           :
            this.state.jobs.map((job) => {
             return(

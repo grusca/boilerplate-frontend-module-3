@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { withAuth } from "../lib/AuthProvider";
 import logo from '../img/logo.png'
 

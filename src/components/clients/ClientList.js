@@ -1,8 +1,7 @@
 // components/clients/ClientList.js
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
-
+import clientService from '../../lib/client-service';
 import AddClient from './AddClient'; 
 
 class ClientList extends Component {
@@ -11,7 +10,7 @@ class ClientList extends Component {
   };
 
   getAllClients = () => {
-    axios.get(`http://localhost:5000/api/clients`)
+    clientService.getClients()
     .then((apiResponse) => {
       this.setState({ listOfClients: apiResponse.data })
     })
@@ -27,10 +26,11 @@ class ClientList extends Component {
     return(
       <div>         {/* After adding a clients,we will GET all clients again from API  */}
         <AddClient getData={this.getAllClients} />   
-        <div>
+        <div className="client">
           { 
             listOfClients.map( (client) => {
             return (
+              
               <div key={client._id} className='clientCard'>
                 <Link to={`/clients/${client._id}`}>
                   <h3>{client.firstname} {client.lastname} </h3>

@@ -1,6 +1,6 @@
 // components/clients/AddClient.js
 import React, { Component } from 'react';
-import axios from 'axios';
+import clientService from '../../lib/client-service';
 
 class AddClient extends Component {
   constructor(props){
@@ -12,15 +12,15 @@ class AddClient extends Component {
     event.preventDefault();
     const {firstname, lastname } = this.state;
     
-    axios.post("http://localhost:5000/api/clients", { firstname, lastname })
-      .then(() => {
-        console.log(firstname)
-        console.log(this.props.currentUser)
-        this.props.getData();
-        this.setState({firstname: "", lastname: ""});
-      })
-      .catch( err => console.log(err) )
+
+  clientService.addClient(firstname, lastname)
+  .then(() => {
+    this.props.getData();
+    this.setState({firstname: "", lastname: ""});
+  })
+  .catch( err => console.log(err) )
   }
+
 
   handleChange = (event) => {  
     const {name, value} = event.target;

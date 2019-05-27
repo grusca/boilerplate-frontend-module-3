@@ -1,6 +1,8 @@
 // components/jobs/JobDetails.js
 import React, { Component } from 'react';
-import axios from 'axios';
+import jobService from '../../lib/job-service';
+import ProgressBar from '../jobs/ProgressBar';
+
 
 class JobDetails extends Component {
 	state = {};
@@ -11,7 +13,7 @@ class JobDetails extends Component {
 
   getTheJob = () => {
     const { id, jobId } = this.props.match.params;
-    axios.get(`http://localhost:5000/api/clients/${id}/jobs/${jobId}`)
+    jobService.getJob(id, jobId)
     	.then( (apiResponse) => {
       	const theJob = apiResponse.data;
       	this.setState(theJob);
@@ -32,8 +34,7 @@ class JobDetails extends Component {
         <h3>JOB DETAILS</h3>
         <h2>{this.state.title}</h2>
         <p>{this.state.description}</p>
-
-        <button onClick={this.handleClick} >GET JOKE</button>
+        <ProgressBar getProgress={this.state.progress}/>
         <button onClick={this.props.history.goBack} >Go Back</button>
       </div>
     )

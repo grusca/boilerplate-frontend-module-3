@@ -1,24 +1,23 @@
 // components/jobs/AddJob.js
 import React, { Component } from 'react';
-import axios from 'axios';
+import jobService from '../../lib/job-service';
 
 class AddJob extends Component {
   constructor(props){
     super(props);
-    this.state = { title: '', description: '', isShowing: false};
+    this.state = { title: '', description: '', progress: '', isShowing: false};
   }
    
   handleFormSubmit = (event) => {
     event.preventDefault();
-    const { title, description } = this.state;
+    const { title, description, progress } = this.state;
     const { clientID } = this.props; 
- // we need to know to which client the job belongs, therefore we get its 'id'
-                                                
-    axios.post("http://localhost:5000/api/jobs",{ title, description, clientID })
+ // we need to know to which client the job belongs to, therefore we get its 'id'
+    jobService.addJob(title, description, progress, clientID)                                            
     .then( () => {
 // after form submit, GET client once more to display the updated job list 
         this.props.getTheClient();
-        this.setState({title: '', description: ''});
+        this.setState({title: '', description: '', progress: ''});
     })
     .catch( error => console.log(error) )
   }
@@ -43,6 +42,7 @@ class AddJob extends Component {
             <form>
               <input type="text" name="title" placeholder='Title' value={this.state.title} onChange={ (e) => this.handleChange(e)}/>
               <input name="description" placeholder='Description' value={this.state.description} onChange={ (e) => this.handleChange(e)} />
+              <input name="progress" placeholder="Enter progress 0-5" value={this.state.progress} onChange={ (e) => this.handleChange(e)} />
               <button onClick={this.handleFormSubmit}>Submit</button>
             </form>
           </div>)

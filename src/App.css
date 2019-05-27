@@ -84,9 +84,9 @@ a {
     text-decoration: none;
 }
 
-/* a:visited {
+a:visited {
     color: black;
-} */ 
+}
 
 .clientCard, .jobCard {
     display: flex;
@@ -97,4 +97,48 @@ a {
     box-shadow: rgba(0,0,0,.2) 10px 10px 14px 1px;
     border-radius: 10px;
     max-width: 700px;
-  }
+}
+
+.client{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: space-between;
+}
+
+.flex-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+    font-family: "Titillium Web", sans-serif;
+    
+}
+
+.progress {
+  color: #f80;
+  width: 300px;
+  height: 20px;
+  background-color: whiteSmoke;
+  position: relative;
+  border-radius: 3px;
+  box-shadow: 0 2px 3px rgba(0,0,0,.1) inset;
+    
+}
+
+.progress:before {
+  content: attr(data-label);
+  font-size: 0.8em;
+  position: absolute;
+  text-align: left;
+  padding-left: 5vh;
+  padding-top: 5px;
+  color: white;
+}
+
+.progress .value {
+  background-color: orange;
+  display: inline-block;
+  height: 100%;
+  border-radius: 3px;
+}
