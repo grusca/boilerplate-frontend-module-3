@@ -8,8 +8,8 @@ class JobService {
     });
   }
 
-  addJob(title, description, progress, clientID ) {
-    return this.job.post('/api/jobs', { title, description, progress, clientID } )
+  addJob(title, description, progress, price, clientID ) {
+    return this.job.post('/api/jobs', { title, description, progress, price, clientID } )
   }
 
   getJob(id, jobId){

@@ -4,6 +4,7 @@ import clientService from '../../lib/client-service';
 import { Link } from 'react-router-dom';
 import EditClient from './EditClient';
 import AddJob from './../jobs/AddJob';
+import ProgressBar from '../jobs/ProgressBar';
 
 class ClientDetails extends Component {
   constructor(props){
@@ -60,7 +61,7 @@ class ClientDetails extends Component {
   render() {
     return (
       <div>
-        <h3>{this.state.firstname} {this.state.lastname}</h3>
+        <h1>{this.state.firstname} {this.state.lastname}</h1>
 
         <Link to={'/clients'}> <button className="button">Back</button> </Link>
 
@@ -76,8 +77,10 @@ class ClientDetails extends Component {
           :
            this.state.jobs.map((job) => {
             return(
-              <Link key={job._id} to={`/clients/${this.state._id}/jobs/${job._id}`}>
-                 <h2 className='job'>{ job.title }</h2>
+              <Link className='jobCard' key={job._id} to={`/clients/${this.state._id}/jobs/${job._id}`}>
+                 <h2 >{ job.title }</h2>
+                 {/* <ProgressBar/> */}
+
              </Link>
             )
           })

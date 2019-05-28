@@ -24,8 +24,8 @@ class Login extends Component {
     const { username, password } = this.state;
     return (
       <div className='signup'>
-        <img src={logo} className="logo" alt="Logo" />
-        <h1> statuss </h1>
+        <Link to={"/"}><img src={logo} className="logo" alt="Logo"/></Link>
+        <h1> status </h1>
         <form onSubmit={this.handleFormSubmit}>
           {/* <i class="fas fa-user"/> */}
           <input type="text" name="username" placeholder="Username" value={username} onChange={this.handleChange}/>

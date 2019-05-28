@@ -25,8 +25,8 @@ class Signup extends Component {
     const { username, password, company } = this.state;
     return (
       <div className='signup'>
-        <img src={logo} className="logo" alt="Logo" />
-        <h1> statuss </h1>
+        <Link to={"/"}><img src={logo} className="logo" alt="Logo"/></Link>
+        <h1> status </h1>
         <form onSubmit={this.handleFormSubmit}>
           <input type="text" name="Company" placeholder="Company" value={company} onChange={this.handleChange} />
           <input type="text" name="username" placeholder="Username" value={username} onChange={this.handleChange}/> 

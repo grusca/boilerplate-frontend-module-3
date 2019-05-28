@@ -5,7 +5,7 @@ import clientService from '../../lib/client-service';
 class AddClient extends Component {
   constructor(props){
     super(props);
-    this.state = { firstname: "", lastname: "" };
+    this.state = { firstname: "", lastname: "", isShowing: false };
   }
    
   handleFormSubmit = (event) => {
@@ -22,6 +22,8 @@ class AddClient extends Component {
   }
 
 
+  toggleForm = () => this.setState({isShowing: !this.state.isShowing});
+
   handleChange = (event) => {  
     const {name, value} = event.target;
     this.setState( {[name]: value} );
@@ -30,12 +32,22 @@ class AddClient extends Component {
   render(){
     return(
       <div>
+
+      <button className="buttonMini" onClick={this.toggleForm}> Add Client </button>
+
+{
+  !this.state.isShowing ?
+   null
+  :
+  (<div>
         <form onSubmit={this.handleFormSubmit}>
           <label>Enter Client Information</label>
           <input type="text" name="firstname" placeholder="First name" value={this.state.firstname} onChange={ (e) => this.handleChange(e) }/>
           <input type="text" name="lastname" placeholder="Last name" value={this.state.lastname} onChange={ (e) => this.handleChange(e) }/>
           <input type="submit" className="button" value="Submit" />
         </form>
+        </div>)
+        }
       </div>
     )
   }

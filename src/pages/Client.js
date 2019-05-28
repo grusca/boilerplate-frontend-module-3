@@ -8,13 +8,12 @@ class Client extends Component {
   render() {
     const { user } = this.props;
     return (
-      <div className="client">
-        <div className="fixedTitle">
-        <h1>Welcome {user.username}</h1>
-        <h2>Your Clients</h2>
+      <div>
+        <div className="pageTitle">
+        <h1> {user.username}</h1>
         </div>
 
-        <input type="search" name="search" placeholder="Search client"/>
+        <h2>Your Clients</h2>
         
         <ClientList/>
 

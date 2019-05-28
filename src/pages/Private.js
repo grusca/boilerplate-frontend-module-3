@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { withAuth } from "../lib/AuthProvider";
-import Navbar from "../components/Navbar";
+import shop from '../img/shop.svg'
 
 
 class Private extends Component {
@@ -9,13 +9,16 @@ class Private extends Component {
     const { user } = this.props;
     return (
       <div>
-        <Navbar/>
-        <h2>Welcome {user.username}</h2>
-        <Link className="home button" to={"/usersettings"}> Settings </Link> 
+
+        <div className="pageTitle">
+          <h1>{user.username}</h1>
+        </div>
+        <img src={shop} className="logo" alt="Logo"/>
         <form>
-        <Link className="home button" to={"/clients"}> Clients </Link> 
-        <Link className="home button" to={"/clients/:id/jobs/:jobId"}> Current Jobs </Link> 
-        <Link className="home button" to={"/trackstatus"}> Track status </Link> 
+          <Link className="home button" to={"/usersettings"}> Settings </Link> 
+          <Link className="home button" to={"/clients"}> Clients </Link> 
+          <Link className="home button" to={"/clients/:id/jobs/:jobId"}> Current Jobs </Link> 
+          <Link className="home button" to={"/trackstatus"}> Track status </Link> 
         </form>
       </div>
     );

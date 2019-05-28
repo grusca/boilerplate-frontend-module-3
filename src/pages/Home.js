@@ -10,8 +10,8 @@ class Login extends Component {
     return (
       <div className='signup'>
         <img src={logo} className="logo" alt="Logo" />
-        <h1> statuss </h1>
-        <h3>Keeping shops and customers in touch</h3>
+        <h1> status </h1>
+        <h3>Keeping shops and customers<br/> in touch</h3>
         <form>
         <Link className="home button" to={"/login"}> Login </Link> 
         <Link className="home button" to={"/signup"}> Signup </Link> 
