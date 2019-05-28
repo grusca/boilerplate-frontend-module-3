@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import jobService from '../../lib/job-service';
 import ProgressBar from '../jobs/ProgressBar';
+import Slider from './Slider';
 
 
 class JobDetails extends Component {
@@ -13,6 +14,7 @@ class JobDetails extends Component {
 
   getTheJob = () => {
     const { id, jobId } = this.props.match.params;
+    // Get Job
     jobService.getJob(id, jobId)
     	.then( (apiResponse) => {
       	const theJob = apiResponse.data;

@@ -35,7 +35,7 @@ class ClientDetails extends Component {
   deleteClient = () => {
     const { id } = this.props.match.params;
 
-    
+    // Delete Client
     clientService.removeClient(id)
       .then( () => this.props.history.push('/clients') )
     	.catch( err => console.log(err));
@@ -47,7 +47,7 @@ class ClientDetails extends Component {
 
   getSingleClient = () => {
     const { id } = this.props.match.params;
-  
+    // Get Client
     clientService.getClient(id)
       .then( (apiResponse) =>{
         const theClient = apiResponse.data;

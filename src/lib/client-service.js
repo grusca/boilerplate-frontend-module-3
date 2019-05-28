@@ -25,7 +25,7 @@ class ClientService {
   }
 
   editClient(_id, firstname, lastname) {
-    return this.client.post(`/api/clients/${_id}`, {firstname, lastname})
+    return this.client.put(`/api/clients/${_id}`, {firstname, lastname})
   }
 
 }

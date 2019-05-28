@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 class ProgressBar extends Component {
 
     render() {  
-      const test = this.props.getProgress * 20 + "%";
-      let style = { width: test }
+      const progress = this.props.getProgress * 20 + "%";
+      let style = { width: progress }
       let text;
 
 
@@ -27,7 +27,7 @@ class ProgressBar extends Component {
   
       return (
         <div className="flex-container">
-          <div className="progress" data-label={`${test} completed`}>
+          <div className="progress" data-label={`${progress} completed`}>
             <span className="value" style={style}></span>
           </div>  
           <h3>{text}</h3>    

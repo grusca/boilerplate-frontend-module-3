@@ -6,7 +6,7 @@ import Navbar from "../components/Navbar";
 
 class Private extends Component {
   render() {
-    const { user, logout } = this.props;
+    const { user } = this.props;
     return (
       <div>
         <Navbar/>

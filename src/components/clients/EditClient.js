@@ -1,6 +1,6 @@
 // components/clients/AddClient.js
 import React, { Component } from 'react';
-import axios from 'axios';
+import clientService from '../../lib/client-service';
 
 class EditClient extends Component {
   constructor(props){
@@ -15,13 +15,11 @@ class EditClient extends Component {
     event.preventDefault();
     const { firstname, lastname } = this.state;
     const { _id } = this.props.theClient;
-  
-    axios.put(`http://localhost:5000/api/clients/${_id}`,
-      { firstname, lastname }
-    )
+    // Edit Client
+    clientService.editClient(_id, firstname, lastname)
     .then( () => {
-      this.props.getTheClient();			
-      this.props.history.push('/clients');  // after submitting the form, redirect to '/clients'
+      this.props.getTheClient();	
+      this.props.history.push('/clients'); 
     })
      .catch( err => console.log(err) )
   }

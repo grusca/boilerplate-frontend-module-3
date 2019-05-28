@@ -10,6 +10,7 @@ class ClientList extends Component {
   };
 
   getAllClients = () => {
+    // Get All Clients
     clientService.getClients()
     .then((apiResponse) => {
       this.setState({ listOfClients: apiResponse.data })

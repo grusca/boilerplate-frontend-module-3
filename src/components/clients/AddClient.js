@@ -12,7 +12,7 @@ class AddClient extends Component {
     event.preventDefault();
     const {firstname, lastname } = this.state;
     
-
+  // Add Client
   clientService.addClient(firstname, lastname)
   .then(() => {
     this.props.getData();
