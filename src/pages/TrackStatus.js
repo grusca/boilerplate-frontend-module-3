@@ -25,7 +25,8 @@ class TrackStatus extends Component {
     return (
       <div className='signup'>
         <Link to={"/"}><img src={logo} className="logo" alt="Logo"/></Link>
-        <h1> Track Statuss </h1>
+        <h1>Status</h1>
+        <h2>Track progress status</h2>
         <form onSubmit={this.handleFormSubmit}>
           <input type="text" name="codenumber" placeholder="Enter keycode" value={keycode} onChange={this.handleChange}/>
           <input className="button" type="submit" value="Track" />

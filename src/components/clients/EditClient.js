@@ -7,7 +7,8 @@ class EditClient extends Component {
     super(props);
     this.state = {
         firstname: this.props.theClient.firstname, 
-        lastname: this.props.theClient.lastname
+        lastname: this.props.theClient.lastname,
+        isShowing: false
     }
   }
     
@@ -24,6 +25,8 @@ class EditClient extends Component {
      .catch( err => console.log(err) )
   }
 
+  toggleForm = () => this.setState({isShowing: !this.state.isShowing});
+
   handleChange = (event) => {
     const { name, value } = event.target;
     this.setState({ [name]: value })
@@ -31,14 +34,35 @@ class EditClient extends Component {
     //  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Property_accessors
   }
 
+  deleteClient = () => {
+    const { id } = this.props.match.params;
+
+    // Delete Client
+    clientService.removeClient(id)
+      .then( () => this.props.history.push('/clients') )
+    	.catch( err => console.log(err));
+  }
+
   render(){
     return (
       <div>
+
+      <button className="buttonMini" onClick={this.toggleForm}>  Edit Client </button>
+
+{
+      !this.state.isShowing ?
+      null
+      :
+      (<div>
+
         <form onSubmit={this.handleFormSubmit}>
           <input type="text" name="firstname" placeholder="First name" value={this.state.firstname} onChange={this.handleChange}/>
           <input type="text" name="lastname" placeholder="Last name" value={this.state.lastname} onChange={this.handleChange} />
           <input type="submit" value="Submit" />
+          <button className="button" onClick={() => this.deleteClient()}> Delete client </button>
         </form>
+        </div>)
+      }
       </div>
     )
   }

@@ -26,11 +26,12 @@ class JobDetails extends Component {
   render(){
     return(
       <div>
-        <div></div>
-        <h1>{this.props.client}</h1>
+        {/* <h1>{this.props.client}</h1> */}
+        <div className="jobtitle">
         <h2>JOB DETAILS</h2>
         <h3>{this.state.title}</h3>
         <p>{this.state.description}</p>
+        </div>
         <ProgressBar getProgress={this.state.progress}/>
         <div className="priceCard">
           <div className="price">

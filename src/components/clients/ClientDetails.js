@@ -4,7 +4,6 @@ import clientService from '../../lib/client-service';
 import { Link } from 'react-router-dom';
 import EditClient from './EditClient';
 import AddJob from './../jobs/AddJob';
-import ProgressBar from '../jobs/ProgressBar';
 
 class ClientDetails extends Component {
   constructor(props){
@@ -32,15 +31,6 @@ class ClientDetails extends Component {
       return <AddJob clientID={this.state._id} getTheClient={this.getSingleClient} />
     }     // pass the clientID and method `getSingleClient()` to AddJob component
   }
-
-  deleteClient = () => {
-    const { id } = this.props.match.params;
-
-    // Delete Client
-    clientService.removeClient(id)
-      .then( () => this.props.history.push('/clients') )
-    	.catch( err => console.log(err));
-  }
  
   componentDidMount() {
     this.getSingleClient();
@@ -66,7 +56,7 @@ class ClientDetails extends Component {
         <Link to={'/clients'}> <button className="button">Back</button> </Link>
 
         { this.renderEditForm() }   {/* Render the form in here */}
-        <button className="button" onClick={() => this.deleteClient()}> Delete client </button>
+
 
         { this.renderAddJobForm() }
 
@@ -79,7 +69,6 @@ class ClientDetails extends Component {
             return(
               <Link className='jobCard' key={job._id} to={`/clients/${this.state._id}/jobs/${job._id}`}>
                  <h2 >{ job.title }</h2>
-                 {/* <ProgressBar/> */}
 
              </Link>
             )
