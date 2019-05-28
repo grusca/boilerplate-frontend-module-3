@@ -22,12 +22,6 @@ class JobDetails extends Component {
     .catch( (err) => console.log(err))
   }
 
-  handleClick = () => {
-    this.props.getData()
-     .then((response) =>  {
-       this.setState({ title: response.data.value})
-     })
- } 
 
   render(){
     return(
@@ -38,7 +32,17 @@ class JobDetails extends Component {
         <h3>{this.state.title}</h3>
         <p>{this.state.description}</p>
         <ProgressBar getProgress={this.state.progress}/>
-        <button onClick={this.handleClick} >GET JOKE</button>
+        <div className="priceCard">
+          <div className="price">
+            <h1>{this.state.price}</h1>
+          </div>
+          <div className="price">
+            <h1></h1>
+          </div>
+          <div className="price">
+            <h1></h1>
+          </div>
+        </div>
         <button className="button" onClick={this.props.history.goBack} >Go Back</button>
       </div>
     )
