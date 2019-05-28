@@ -53,7 +53,7 @@ class ClientDetails extends Component {
       <div>
         <h1>{this.state.firstname} {this.state.lastname}</h1>
 
-        <Link to={'/clients'}> <button className="button">Back</button> </Link>
+
 
         { this.renderEditForm() }   {/* Render the form in here */}
 
@@ -69,12 +69,11 @@ class ClientDetails extends Component {
             return(
               <Link className='jobCard' key={job._id} to={`/clients/${this.state._id}/jobs/${job._id}`}>
                  <h2 >{ job.title }</h2>
-
              </Link>
             )
           })
         }
-
+        <Link to={'/clients'}> <button className="button">Back</button> </Link>
       </div>
     )
   }

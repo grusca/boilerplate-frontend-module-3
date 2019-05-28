@@ -36,8 +36,6 @@ class EditClient extends Component {
 
   deleteClient = () => {
     const { id } = this.props.match.params;
-
-    // Delete Client
     clientService.removeClient(id)
       .then( () => this.props.history.push('/clients') )
     	.catch( err => console.log(err));

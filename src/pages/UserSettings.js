@@ -29,7 +29,8 @@ class UserSettings extends Component {
         <form onSubmit={this.handleFormSubmit}>
           <input type="text" name="username" placeholder="Username" value={username} onChange={this.handleChange}/>
           <input type="password" name="password" placeholder="Password" value={password} onChange={this.handleChange}/>
-          <input className="button" type="submit" value="Login" />
+          <input className="button" type="submit" value="Edit Profile" />
+          <Link to={'/private'}> <button className="button">Back</button> </Link>
         </form>
       </div>
     );

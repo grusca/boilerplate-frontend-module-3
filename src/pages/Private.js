@@ -13,7 +13,7 @@ class Private extends Component {
         <div className="pageTitle">
           <h1>{user.username}</h1>
         </div>
-        <img src={shop} className="logo" alt="Logo"/>
+        <img src={shop} className="profileimage" alt="Logo"/>
         <form>
           <Link className="home button" to={"/usersettings"}> Settings </Link> 
           <Link className="home button" to={"/clients"}> Clients </Link> 
