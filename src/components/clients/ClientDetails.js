@@ -18,9 +18,8 @@ class ClientDetails extends Component {
     if (!this.state.firstname && !this.state.lastname) return <p>LOADING</p>; 
     else {
       return (
-        <EditClient theClient={this.state}
-          getTheClient={this.getSingleClient} 
-          {...this.props} /> // To be able to use 'this.props.history' in EditClient  
+        <EditClient theClient={this.state} getTheClient={this.getSingleClient} {...this.props} /> 
+          // To be able to use 'this.props.history' in EditClient  
       )      
     }
   }

@@ -16,6 +16,10 @@ class JobService {
     return this.job.get(`/api/clients/${id}/jobs/${jobId}`)
   }
 
+  getJobByKeycode(keycode){
+    return this.job.get(`/api/jobs/${keycode}`)
+  }
+
 }
 
 const job = new JobService();

@@ -8,16 +8,16 @@ class UserSettings extends Component {
     password: ""
   };
 
-//   handleFormSubmit = event => {
-//     event.preventDefault();
-//     const { username, password } = this.state;
-//     this.props.login({ username, password });
-//   };
+  handleFormSubmit = event => {
+    event.preventDefault();
+    const { username, password } = this.state;
+    this.props.login({ username, password });
+  };
 
-//   handleChange = event => {
-//     const { name, value } = event.target;
-//     this.setState({ [name]: value });
-//   };
+  handleChange = event => {
+    const { name, value } = event.target;
+    this.setState({ [name]: value });
+  };
 
   render() {
     const { username, password } = this.state;

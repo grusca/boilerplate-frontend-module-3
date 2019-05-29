@@ -6,6 +6,7 @@ import AuthProvider from "./lib/AuthProvider";
 import AnonRoute from "./components/AnonRoute";
 import PrivateRoute from "./components/PrivateRoute";
 
+
 import Private from "./pages/Private";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
@@ -13,6 +14,7 @@ import Home from "./pages/Home";
 import TrackStatus from "./pages/TrackStatus";
 import UserSettings from "./pages/UserSettings";
 import Clients from "./pages/Client";
+import JobStatus from './components/jobs/JobStatus'
 
 
 import ClientDetails from './components/clients/ClientDetails';
@@ -28,6 +30,7 @@ class App extends Component {
             <AnonRoute path="/signup" component={Signup} />
             <AnonRoute path="/login" component={Login} />
             <AnonRoute path="/Trackstatus" component={TrackStatus} />
+            <AnonRoute exact path="/jobs/:keycode" component={JobStatus} />
             <PrivateRoute path="/private" component={Private} />
             <PrivateRoute path="/usersettings" component={UserSettings} />
             <PrivateRoute exact path="/clients" component={Clients} />

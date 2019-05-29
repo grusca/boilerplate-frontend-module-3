@@ -15,6 +15,7 @@ class ClientList extends Component {
     .then((apiResponse) => {
       this.setState({ listOfClients: apiResponse.data })
     })
+    .catch( err => console.log(err) )
   }
 
   componentDidMount() {

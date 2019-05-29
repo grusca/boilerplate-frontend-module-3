@@ -2,30 +2,24 @@
 import React, { Component } from 'react';
 import jobService from '../../lib/job-service';
 import ProgressBar from '../jobs/ProgressBar';
-import EditJob from '../jobs/EditJob';
 
-class JobDetails extends Component {
+
+class JobStatus extends Component {
 	state = {};
 
   componentDidMount(){
     this.getTheJob();
   }
 
-  renderEditForm = () => {
-    if (!this.state.title && !this.state.description) return <p>LOADING</p>; 
-    else {
-      return (
-        <EditJob theJob={this.state} getTheJob={this.getSingleJob} {...this.props} /> 
-      )      
-    }
-  }
 
   getTheJob = () => {
-    const { id, jobId } = this.props.match.params;
+    const { keycode } = this.props.match.params;
     // Get Job
-    jobService.getJob(id, jobId)
+    console.log(keycode)
+    jobService.getJobByKeycode(keycode)
     	.then( (apiResponse) => {
-      	const theJob = apiResponse.data;
+        const theJob = apiResponse.data;
+        console.log(theJob)
       	this.setState(theJob);
     })
     .catch( (err) => console.log(err))
@@ -56,14 +50,10 @@ class JobDetails extends Component {
             <h4>{this.state.price - this.state.amountpaid} €</h4>
           </div>
         </div>
-        <div className="keycodeCard">
-          <h5>Keycode</h5>
-          <div className="keycode"><h6>{this.state.keycode}</h6></div>
-        </div>
         <button className="button" onClick={this.props.history.goBack} >Go Back</button>
       </div>
     )
   }
 }
 
-export default JobDetails;
+export default JobStatus;

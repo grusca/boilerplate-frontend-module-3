@@ -1,18 +1,23 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { withAuth } from "../lib/AuthProvider";
-import logo from '../img/logo.png'
+import jobService from '../lib/job-service';
+import logo from '../img/logo.png';
 
 class TrackStatus extends Component {
   state = {
     keycode: "",
+    job: null,
   };
 
   handleFormSubmit = event => {
     event.preventDefault();
     const { keycode } = this.state;
-    this.props.keycode({ keycode });
-  };
+ 
+        this.props.history.push(`/jobs/${keycode}`)
+
+  }
+  
 
   handleChange = event => {
     const { name, value } = event.target;
@@ -33,6 +38,6 @@ class TrackStatus extends Component {
       </div>
     );
   }
-}
+};
 
 export default withAuth(TrackStatus);
