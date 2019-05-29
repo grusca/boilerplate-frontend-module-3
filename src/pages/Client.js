@@ -12,10 +12,8 @@ class Client extends Component {
       <div>
         <div className="pageTitle">
         <h1> {user.username}</h1>
-        </div>
-
         <h2>Your Clients</h2>
-        
+        </div>
         <ClientList/>
         <Link to={'/private'}> <button className="button">Back</button> </Link>
       </div>

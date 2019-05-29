@@ -50,7 +50,11 @@ class ClientDetails extends Component {
   render() {
     return (
       <div>
-        <h1>{this.state.firstname} {this.state.lastname}</h1>
+        <div className="pageTitle">
+          <h1>{this.state.firstname} {this.state.lastname}</h1>
+          <h4>{this.state.phonenumber}</h4>
+          <h4>{this.state.email}</h4>
+        </div>
 
 
 

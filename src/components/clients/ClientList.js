@@ -33,12 +33,12 @@ class ClientList extends Component {
             listOfClients.map( (client) => {
             return (
               
-              <div key={client._id} className='clientCard'>
-                <Link to={`/clients/${client._id}`}>
-                  <h3>{client.firstname} {client.lastname} </h3>
-                  <p></p>
-                </Link>
-              </div>
+              <Link key={client._id} className='clientCard' to={`/clients/${client._id}`}>
+                <div>
+                  <h3 className="clientName"> {client.firstname} {client.lastname} </h3>
+                  <p className="phonenumber">{client.phonenumber}</p>
+                </div>
+              </Link>
             )})
           }
         </div>

@@ -8,16 +8,18 @@ class EditClient extends Component {
     this.state = {
         firstname: this.props.theClient.firstname, 
         lastname: this.props.theClient.lastname,
+        phonenumber: this.props.theClient.phonenumber,
+        email: this.props.theClient.email,
         isShowing: false
     }
   }
     
   handleFormSubmit = (event) => {
     event.preventDefault();
-    const { firstname, lastname } = this.state;
+    const { firstname, lastname, phonenumber, email } = this.state;
     const { _id } = this.props.theClient;
     // Edit Client
-    clientService.editClient(_id, firstname, lastname)
+    clientService.editClient(_id, firstname, lastname, phonenumber, email)
     .then( () => {
       this.props.getTheClient();	
       this.props.history.push('/clients'); 
@@ -56,6 +58,8 @@ class EditClient extends Component {
         <form onSubmit={this.handleFormSubmit}>
           <input type="text" name="firstname" placeholder="First name" value={this.state.firstname} onChange={this.handleChange}/>
           <input type="text" name="lastname" placeholder="Last name" value={this.state.lastname} onChange={this.handleChange} />
+          <input type="text" name="phonenumber" placeholder="Phone number" value={this.state.phonenumber} onChange={this.handleChange} />
+          <input type="text" name="email" placeholder="Email" value={this.state.email} onChange={this.handleChange} />
           <input type="submit" value="Submit" />
           <button className="button" onClick={() => this.deleteClient()}> Delete client </button>
         </form>

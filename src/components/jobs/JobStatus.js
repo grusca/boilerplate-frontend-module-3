@@ -15,11 +15,9 @@ class JobStatus extends Component {
   getTheJob = () => {
     const { keycode } = this.props.match.params;
     // Get Job
-    console.log(keycode)
     jobService.getJobByKeycode(keycode)
     	.then( (apiResponse) => {
         const theJob = apiResponse.data;
-        console.log(theJob)
       	this.setState(theJob);
     })
     .catch( (err) => console.log(err))

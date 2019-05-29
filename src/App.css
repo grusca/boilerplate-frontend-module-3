@@ -142,7 +142,22 @@ a:visited {
     color:;
 }
 
-.clientCard, .jobCard {
+.clientCard {
+display: flex;
+align-items: center;
+height: 50px;
+margin: 0px 25px;
+padding: 10px 20px;
+box-shadow: rgba(0,0,0,.1) 6px 6px 10px 1px;
+border-radius: 10px;
+max-width: 700px;
+}
+
+.clientName {
+    margin: 3px;
+}
+
+.jobCard {
     display: flex;
     align-items: center;
     height: 50px;
@@ -186,6 +201,10 @@ a:visited {
 }
 
 .flex-container {
+    width: 360px;
+    border-radius: 20px;
+    background-color: whitesmoke;
+    box-shadow: rgba(0,0,0,.1) 6px 6px 10px 1px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -261,4 +280,9 @@ input[type=range] {
     position: relative;
     border-radius: 6px;
     box-shadow: 0 2px 3px rgba(0,0,0,.1) inset;
+}
+
+.phonenumber {
+    margin: 0px;
+    font-size: 14px;
 }

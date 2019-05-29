@@ -8,8 +8,8 @@ class ClientService {
     });
   }
 
-  addClient(firstname, lastname) {
-    return this.client.post('/api/clients', {firstname, lastname})
+  addClient(firstname, lastname, phonenumber, email) {
+    return this.client.post('/api/clients', {firstname, lastname, phonenumber, email})
   }
 
   removeClient(id) {
@@ -24,8 +24,8 @@ class ClientService {
     return this.client.get(`/api/clients`)
   }
 
-  editClient(_id, firstname, lastname) {
-    return this.client.put(`/api/clients/${_id}`, {firstname, lastname})
+  editClient(_id, firstname, lastname, phonenumber, email) {
+    return this.client.put(`/api/clients/${_id}`, {firstname, lastname, phonenumber, email})
   }
 
 }
