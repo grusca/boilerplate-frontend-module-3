@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { withAuth } from "../lib/AuthProvider";
-import jobService from '../lib/job-service';
 import logo from '../img/logo.png';
 
 class TrackStatus extends Component {
@@ -18,7 +17,6 @@ class TrackStatus extends Component {
 
   }
   
-
   handleChange = event => {
     const { name, value } = event.target;
     this.setState({ [name]: value });

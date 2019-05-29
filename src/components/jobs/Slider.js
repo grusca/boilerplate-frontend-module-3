@@ -1,46 +1,41 @@
 import React, { Component } from 'react';
-// import PropTypes from 'prop-types';
 
-const styles = {
-  root: {
-    width: 300,
-  },
-  slider: {
-    padding: '22px 0px',
-  },
-};
+class Slider extends Component {
 
-class Slider extends React.Component {
-  state = {
-    value: 1,
-  };
+    render() {  
+      const progress = this.props.getProgress * 20 + "%";
+      let style = { width: progress }
+      let text;
 
-  handleChange = (event, value) => {
-    this.setState({ value });
-  };
 
-  render() {
-    const { classes } = this.props;
-    const { value } = this.state;
-
-    return (
-      <div className={classes.root}>
-        <Slider
-          className={classes.slider}
-          value={value}
-          min={0}
-          max={6}
-          step={1}
-          onChange={this.handleChange}
-        />
-      </div>
-    );
-  }
-}
-
-// Slider.propTypes = {
-//   classes: PropTypes.object.isRequired,
-// };
-
-export default Slider;
+      switch(this.props.getProgress) {
+        case 0: text = "Item received, pending turn";
+        break;
+        case 1: text = "Repair mode-On. Let's go!";
+        break;
+        case 2: text = "Hang tight, magic in progress";
+        break;        
+        case 3: text = "Hang tight, magic in progress";
+        break;
+        case 4: text = "Final touches";
+        break;        
+        case 5: text = "Hurray! Your item is ready!";
+        break;
+        default:
+        text = "Pending status confirmation";
+      }
+  
+      return (
+        <div className="flex-container">
+          <div className="progress" data-label={`${progress} completed`}>
+          <input type="range" min="0" max="5" step="1" name="progress" value={this.state.progress} onChange={ (e) => this.handleChange(e)} />
+            <span className="value" style={style}></span>
+          </div>  
+          <h3>{text}</h3>    
+              
+       </div>
+      )
+    }
+  } 
+  export default Slider;
 

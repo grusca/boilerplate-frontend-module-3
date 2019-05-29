@@ -1,6 +1,7 @@
 // components/jobs/AddJob.js
 import React, { Component } from 'react';
 import jobService from '../../lib/job-service';
+// import Slider from '../jobs/Slider';
 
 class AddJob extends Component {
   constructor(props){

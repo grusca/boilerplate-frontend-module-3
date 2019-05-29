@@ -27,6 +27,7 @@ class ProgressBar extends Component {
   
       return (
         <div className="flex-container">
+          <p className="progressTitle">Progress status </p>
           <div className="progress" data-label={`${progress} completed`}>
             <span className="value" style={style}></span>
           </div>  
