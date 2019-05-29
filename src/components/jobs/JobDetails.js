@@ -39,7 +39,7 @@ class JobDetails extends Component {
             <h4>{this.state.price} €</h4>
           </div>
           <div className="price">
-            <h5>Amt Paid</h5>
+            <h5>Paid</h5>
             <h4>{this.state.amountpaid} €</h4>
           </div>
           <div className="price">
@@ -47,7 +47,10 @@ class JobDetails extends Component {
             <h4>{this.state.price - this.state.amountpaid} €</h4>
           </div>
         </div>
-        <div className="input">{this.state.keycode}</div>
+        <div className="keycodeCard">
+          <h5>Keycode</h5>
+          <div className="keycode"><h6>{this.state.keycode}</h6></div>
+        </div>
         <button className="button" onClick={this.props.history.goBack} >Go Back</button>
       </div>
     )
