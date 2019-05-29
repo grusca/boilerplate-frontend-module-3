@@ -18,7 +18,6 @@ class Private extends Component {
           <Link className="home button" to={"/usersettings"}> Settings </Link> 
           <Link className="home button" to={"/clients"}> Clients </Link> 
           <Link className="home button" to={"/clients/:id/jobs/:jobId"}> Current Jobs </Link> 
-          <Link className="home button" to={"/trackstatus"}> Track status </Link> 
         </form>
       </div>
     );

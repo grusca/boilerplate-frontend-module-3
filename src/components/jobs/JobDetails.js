@@ -36,17 +36,18 @@ class JobDetails extends Component {
         <div className="priceCard">
           <div className="price">
             <h5>Price</h5>
-            <h4>{this.state.price}</h4>
+            <h4>{this.state.price} €</h4>
           </div>
           <div className="price">
             <h5>Amt Paid</h5>
-            <h4>{this.state.amountpaid}</h4>
+            <h4>{this.state.amountpaid} €</h4>
           </div>
           <div className="price">
             <h5>Balance</h5>
-            <h4>{this.state.price - this.state.amountpaid}</h4>
+            <h4>{this.state.price - this.state.amountpaid} €</h4>
           </div>
         </div>
+        <div className="input">{this.state.keycode}</div>
         <button className="button" onClick={this.props.history.goBack} >Go Back</button>
       </div>
     )

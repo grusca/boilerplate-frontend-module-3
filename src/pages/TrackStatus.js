@@ -5,14 +5,13 @@ import logo from '../img/logo.png'
 
 class TrackStatus extends Component {
   state = {
-    username: "",
-    password: ""
+    keycode: "",
   };
 
   handleFormSubmit = event => {
     event.preventDefault();
-    const { username, password } = this.state;
-    this.props.login({ username, password });
+    const { keycode } = this.state;
+    this.props.keycode({ keycode });
   };
 
   handleChange = event => {
@@ -28,7 +27,7 @@ class TrackStatus extends Component {
         <h1>Status</h1>
         <h2>Track progress status</h2>
         <form onSubmit={this.handleFormSubmit}>
-          <input type="text" name="codenumber" placeholder="Enter keycode" value={keycode} onChange={this.handleChange}/>
+          <input type="text" name="keycode" placeholder="Enter keycode" value={keycode} onChange={this.handleChange}/>
           <input className="button" type="submit" value="Track" />
         </form>
       </div>

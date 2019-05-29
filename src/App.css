@@ -154,6 +154,8 @@ a:visited {
     justify-content: space-around;
     color:white;
     margin: 30px 25px;
+    margin-bottom: 180px;
+
     
 
 }
@@ -164,7 +166,7 @@ a:visited {
     align-items: center;
     width: 90px;
     height: 90px;
-    border-radius: 10px;
+    border-radius: 12px;
     box-shadow: rgba(0,0,0,.1) 6px 6px 10px 1px;
     background-image: linear-gradient(to right top, #5e35b1, #6f33b2, #7f2fb2, #8e2cb1, #9c27b0);
 
@@ -189,7 +191,7 @@ a:visited {
 .progress {
   color: #f80;
   width: 300px;
-  height: 20px;
+  height: 24px;
   background-color: whiteSmoke;
   position: relative;
   border-radius: 3px;
