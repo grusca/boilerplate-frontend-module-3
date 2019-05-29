@@ -43,7 +43,7 @@ class AddJob extends Component {
               <input type="text" name="title" placeholder='Title' value={this.state.title} onChange={ (e) => this.handleChange(e)}/>
               <input name="description" placeholder='Description' value={this.state.description} onChange={ (e) => this.handleChange(e)} />
               <input name="price" placeholder='Price' value={this.state.price} onChange={ (e) => this.handleChange(e)} />
-              <input name="progress" placeholder="Enter progress 0-5" value={this.state.progress} onChange={ (e) => this.handleChange(e)} />
+              <input type="range" min="1" max="5" step="1" defaultValue={this.state.progress} name="progress" value={this.state.progress} onChange={ (e) => this.handleChange(e)} />
               <button onClick={this.handleFormSubmit}>Submit</button>
             </form>
           </div>)
@@ -54,3 +54,4 @@ class AddJob extends Component {
 }
 
 export default AddJob;
+
