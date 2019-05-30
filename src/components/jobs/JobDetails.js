@@ -37,9 +37,9 @@ class JobDetails extends Component {
       <div>
         {/* <h1>{this.props.client}</h1> */}
         <div className="jobtitle">
-        <h2>JOB DETAILS</h2>
-        <h3>{this.state.title}</h3>
-        <p>{this.state.description}</p>
+        <h1 className="contactinfoTitle">Job Details</h1>
+        <p className="contactinfo">{this.state.title}</p>
+        <p className="contactinfo">{this.state.description}</p>
         </div>
         <ProgressBar getProgress={this.state.progress}/>
         <div className="priceCard">
