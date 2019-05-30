@@ -2,12 +2,7 @@ import React, { Component } from 'react';
 
 class Slider extends Component {
 
-  componentDidMount(){
-    console.log(this.props);
-  }
-
   onChangeProgress = (e) => {
-    console.log(typeof this.props.progress);
     this.props.changeProgress(e.target.value);
   }
 
@@ -35,7 +30,8 @@ class Slider extends Component {
   
     return (
       <div className="flex-container-slider">
-        <input type="range" min="0" max="5" step="1" name="progress" value={this.props.progress} onChange={ this.onChangeProgress} />
+        <input type="range" min="0" max="5" step="1" name="progress"
+         value={this.props.progress} onChange={ this.onChangeProgress} />
           <span className="value" style={style}></span>
         <h3>{text}</h3>       
       </div>
