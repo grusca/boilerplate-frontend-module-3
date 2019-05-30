@@ -1,7 +1,7 @@
 // components/jobs/AddJob.js
 import React, { Component } from 'react';
 import jobService from '../../lib/job-service';
-// import Slider from '../jobs/Slider';
+import Slider from '../jobs/Slider';
 
 class AddJob extends Component {
   constructor(props){
@@ -30,6 +30,12 @@ class AddJob extends Component {
     this.setState({[name]: value});
   }
 
+  onChangeProgress = (newProgress) => {
+    this.setState({
+      progress: newProgress
+    });
+  }
+
   render(){
     return(
       <div>
@@ -44,7 +50,7 @@ class AddJob extends Component {
               <input type="text" name="title" placeholder='Title' value={this.state.title} onChange={ (e) => this.handleChange(e)}/>
               <input name="description" placeholder='Description' value={this.state.description} onChange={ (e) => this.handleChange(e)} />
               <input name="price" placeholder='Price' value={this.state.price} onChange={ (e) => this.handleChange(e)} />
-              <input type="range" min="0" max="5" step="1" name="progress" value={this.state.progress} onChange={ (e) => this.handleChange(e)} />
+              <Slider progress = {this.state.progress} onChange={ (e) => this.handleChange(e)} changeProgress={this.onChangeProgress}/>
               <button className="button" onClick={this.handleFormSubmit}>Submit</button>
             </form>
           </div>)

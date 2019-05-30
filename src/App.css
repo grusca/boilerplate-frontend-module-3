@@ -212,6 +212,7 @@ max-width: 700px;
     font-family: "Titillium Web", sans-serif;
 }
 
+
 .progress {
   color: #f80;
   width: 300px;
@@ -240,6 +241,14 @@ max-width: 700px;
   border-radius: 3px;
 }
 
+.flex-container-slider {
+    width: 360px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+    font-family: "Titillium Web", sans-serif;
+}
 
 .jobtitle {
     margin: 30px 30px;
@@ -285,4 +294,14 @@ input[type=range] {
 .phonenumber {
     margin: 0px;
     font-size: 14px;
+}
+
+.contactinfo {
+    font-size: 20px;
+    font-weight: bolder;
+    margin-top: -18px;
+}
+
+.contactinfoTitle {
+    margin-bottom: 14px;
 }

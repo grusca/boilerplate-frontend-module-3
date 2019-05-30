@@ -51,9 +51,9 @@ class ClientDetails extends Component {
     return (
       <div>
         <div className="pageTitle">
-          <h1>{this.state.firstname} {this.state.lastname}</h1>
-          <h4>{this.state.phonenumber}</h4>
-          <h4>{this.state.email}</h4>
+          <h1 className="contactinfoTitle"> {this.state.firstname} {this.state.lastname} </h1>
+          <p className="contactinfo"> {this.state.phonenumber} </p>
+          <p className="contactinfo"> {this.state.email} </p>
         </div>
 
 
