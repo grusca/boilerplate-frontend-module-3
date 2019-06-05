@@ -4,8 +4,8 @@ import { withAuth } from "../lib/AuthProvider";
 
 class UserSettings extends Component {
   state = {
-    username: "",
-    password: ""
+    username: this.props.username,
+    password: "",
   };
 
   handleFormSubmit = event => {

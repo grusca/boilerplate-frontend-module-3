@@ -8,8 +8,8 @@ class ClientService {
     });
   }
 
-  addClient(firstname, lastname, phonenumber, email) {
-    return this.client.post('/api/clients', {firstname, lastname, phonenumber, email})
+  addClient(firstname, lastname, phonenumber, email, userID) {
+    return this.client.post('/api/clients', {firstname, lastname, phonenumber, email, userID})
   }
 
   removeClient(id) {

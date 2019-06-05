@@ -18,7 +18,8 @@ export class EditJob extends Component {
         event.preventDefault();
         const { title, description, progress, price, amountpaid } = this.state;
         const { _id } = this.props.theJob;
-        // Edit Client
+        
+        // Edit Job
         jobService.editClient(_id, title, description, progress, price, amountpaid)
         .then( () => {
           this.props.getTheClient();	

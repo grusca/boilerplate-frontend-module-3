@@ -13,21 +13,21 @@ class AddJob extends Component {
     event.preventDefault();
     const { title, description, progress, price } = this.state;
     const { clientID } = this.props; 
- // we need to know to which client the job belongs to, therefore we get its 'id'
+    // we need to know to which client the job belongs to, therefore we get its 'id'
     jobService.addJob(title, description, progress, price, clientID)                                            
     .then( () => {
-// after form submit, GET client once more to display the updated job list 
-        this.props.getTheClient();
-        this.setState({title: '', description: '', progress: '', price: ''});
+      // after form submit, GET client once more to display the updated job list 
+      this.props.getTheClient();
+      this.setState({title: '', description: '', progress: '', price: '', isShowing: false});
     })
-    .catch( error => console.log(error) )
+    .catch( err => console.log(err) )
   }
   
   toggleForm = () => this.setState({isShowing: !this.state.isShowing});
 
   handleChange = (event) => {  
     const {name, value} = event.target;
-    this.setState({[name]: value});
+    this.setState( {[name]: value} );
   }
 
   onChangeProgress = (newProgress) => {

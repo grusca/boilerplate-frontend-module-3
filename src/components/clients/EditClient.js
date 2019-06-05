@@ -6,11 +6,11 @@ class EditClient extends Component {
   constructor(props){
     super(props);
     this.state = {
-        firstname: this.props.theClient.firstname, 
-        lastname: this.props.theClient.lastname,
-        phonenumber: this.props.theClient.phonenumber,
-        email: this.props.theClient.email,
-        isShowing: false
+      firstname: this.props.theClient.firstname, 
+      lastname: this.props.theClient.lastname,
+      phonenumber: this.props.theClient.phonenumber,
+      email: this.props.theClient.email,
+      isShowing: false
     }
   }
     

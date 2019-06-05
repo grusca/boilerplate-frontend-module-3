@@ -10,22 +10,22 @@ class AddClient extends Component {
       lastname: "",
       phonenumber: "",
       email: "",
-      isShowing: false };
+      isShowing: false 
+    }
   }
    
   handleFormSubmit = (event) => {
     event.preventDefault();
-    const {firstname, lastname, phonenumber, email } = this.state;
-    
-  // Add Client
-  clientService.addClient(firstname, lastname, phonenumber, email)
-  .then(() => {
-    this.props.getData();
-    this.setState({firstname: "", lastname: "", phonenumber: "", email: ""});
-  })
-  .catch( err => console.log(err) )
+    const { firstname, lastname, phonenumber, email } = this.state;
+    const { userID } = this.props; 
+    // Add Client
+    clientService.addClient(firstname, lastname, phonenumber, email, userID)
+    .then( () => {
+      this.props.getData();
+      this.setState({firstname: "", lastname: "", phonenumber: "", email: "", isShowing: false });
+    })
+    .catch( err => console.log(err) )
   }
-
 
   toggleForm = () => this.setState({isShowing: !this.state.isShowing});
 
@@ -45,13 +45,13 @@ class AddClient extends Component {
    null
   :
   (<div>
-        <form onSubmit={this.handleFormSubmit}>
+        <form>
           <label>Enter Client Information</label>
           <input type="text" name="firstname" placeholder="First name" value={this.state.firstname} onChange={ (e) => this.handleChange(e) } />
           <input type="text" name="lastname" placeholder="Last name" value={this.state.lastname} onChange={ (e) => this.handleChange(e) }/>
           <input type="text" name="phonenumber" placeholder="Phone number" value={this.state.phonenumber} onChange={ (e) => this.handleChange(e) }/>
           <input type="email" name="email" placeholder="Email" value={this.state.email} onChange={ (e) => this.handleChange(e) }/>
-          <input type="submit" className="button" value="Submit" onClick={this.toggleForm} />
+          <input type="submit" className="button" value="Submit" onClick={this.handleFormSubmit}/>
         </form>
         </div>)
         }
