@@ -15,7 +15,7 @@ class JobDetails extends Component {
     if (!this.state.title && !this.state.description) return <p>LOADING</p>; 
     else {
       return (
-        <EditJob theJob={this.state} getTheJob={this.getSingleJob} {...this.props} /> 
+        <EditJob theJob={this.state} getTheJob={this.getTheJob} {...this.props} /> 
       )      
     }
   }
@@ -28,7 +28,7 @@ class JobDetails extends Component {
       	const theJob = apiResponse.data;
       	this.setState(theJob);
     })
-    .catch( (err) => console.log(err))
+    .catch( err => console.log(err))
   }
 
 
@@ -60,6 +60,7 @@ class JobDetails extends Component {
           <h5>Keycode</h5>
           <div className="keycode"><h6>{this.state.keycode}</h6></div>
         </div>
+        {/* { this.renderEditForm() } */}
         <button className="button" onClick={this.props.history.goBack} >Go Back</button>
       </div>
     )

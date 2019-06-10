@@ -30,7 +30,7 @@ class TrackStatus extends Component {
         <h1>Status</h1>
         <h2>Track progress status</h2>
         <form onSubmit={this.handleFormSubmit}>
-          <input type="text" name="keycode" placeholder="Enter keycode" value={keycode} onChange={this.handleChange}/>
+          <input className="input" type="text" name="keycode" placeholder="Enter keycode" value={keycode} onChange={this.handleChange}/>
           <input className="button" type="submit" value="Track" />
         </form>
       </div>

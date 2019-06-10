@@ -28,9 +28,18 @@ class Signup extends Component {
         <Link to={"/"}><img src={logo} className="logo" alt="Logo"/></Link>
         <h1> status </h1>
         <form onSubmit={this.handleFormSubmit}>
-          <input type="text" name="Company" placeholder="Company" value={company} onChange={this.handleChange} />
-          <input type="text" name="username" placeholder="Username" value={username} onChange={this.handleChange}/> 
-          <input type="password" name="password" placeholder="Password" value={password} onChange={this.handleChange} />
+          <div className='inputContainer'>
+              <i className="fas fa-building"/>
+              <input className="input-field" type="text" name="Company" placeholder="Company" value={company} onChange={this.handleChange} />
+          </div>
+          <div className='inputContainer'>
+            <i className="fas fa-user"/>
+            <input className="input-field" type="text" name="username" placeholder="Username" value={username} onChange={this.handleChange}/> 
+          </div>
+          <div className='inputContainer'>
+            <i className="fas fa-lock"/>
+            <input className="input-field" type="password" name="password" placeholder="Password" value={password} onChange={this.handleChange} />
+          </div>
           <input className="button" type="submit" value="Signup" />
         </form>
         <p> Already have an account? <Link to={"/login"}> Login</Link></p>

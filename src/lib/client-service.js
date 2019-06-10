@@ -17,11 +17,11 @@ class ClientService {
   }
 
   getClient(id) {
-    return this.client.get(`/api/clients/${id}`)
+    return this.client.get(`/api/client/${id}`)
   }
 
-  getClients(){
-    return this.client.get(`/api/clients`)
+  getClients(userId){
+    return this.client.get(`/api/clients/${userId}`)
   }
 
   editClient(_id, firstname, lastname, phonenumber, email) {

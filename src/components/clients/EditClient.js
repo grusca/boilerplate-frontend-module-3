@@ -56,11 +56,11 @@ class EditClient extends Component {
       (<div>
 
         <form onSubmit={this.handleFormSubmit}>
-          <input type="text" name="firstname" placeholder="First name" value={this.state.firstname} onChange={this.handleChange}/>
-          <input type="text" name="lastname" placeholder="Last name" value={this.state.lastname} onChange={this.handleChange} />
-          <input type="text" name="phonenumber" placeholder="Phone number" value={this.state.phonenumber} onChange={this.handleChange} />
-          <input type="text" name="email" placeholder="Email" value={this.state.email} onChange={this.handleChange} />
-          <input type="submit" value="Submit" />
+          <input className="input" type="text" name="firstname" placeholder="First name" value={this.state.firstname} onChange={this.handleChange}/>
+          <input className="input" type="text" name="lastname" placeholder="Last name" value={this.state.lastname} onChange={this.handleChange} />
+          <input className="input" type="text" name="phonenumber" placeholder="Phone number" value={this.state.phonenumber} onChange={this.handleChange} />
+          <input className="input" type="text" name="email" placeholder="Email" value={this.state.email} onChange={this.handleChange} />
+          <input className="button" type="submit" value="Submit" />
           <button className="button" onClick={() => this.deleteClient()}> Delete client </button>
         </form>
         </div>)

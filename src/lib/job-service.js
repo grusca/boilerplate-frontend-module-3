@@ -20,6 +20,10 @@ class JobService {
     return this.job.get(`/api/jobs/${keycode}`)
   }
 
+  editJob(_id, title, description, progress, price) {
+    return this.client.put(`/api/jobs/${_id}`, {title, description, progress, price})
+  }
+
 }
 
 const job = new JobService();

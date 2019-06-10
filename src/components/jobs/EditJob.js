@@ -1,9 +1,10 @@
 // components/jobs/AddJob.js
 import React, { Component } from 'react';
 import jobService from '../../lib/job-service';
+import Slider from '../jobs/Slider';
 
 
-export class EditJob extends Component {
+class EditJob extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -20,10 +21,10 @@ export class EditJob extends Component {
         const { _id } = this.props.theJob;
         
         // Edit Job
-        jobService.editClient(_id, title, description, progress, price, amountpaid)
+        jobService.editJob(_id, title, description, progress, price, amountpaid)
         .then( () => {
-          this.props.getTheClient();	
-          this.props.history.push('/clients'); 
+          this.props.getTheJob();	
+          this.props.history.push('/jobs'); 
         })
          .catch( err => console.log(err) )
       }
@@ -35,15 +36,16 @@ export class EditJob extends Component {
         this.setState({ [name]: value })
       }
     
-      deleteClient = () => {
+      deleteJob = () => {
         const { id } = this.props.match.params;
-        jobService.removeClient(id)
-          .then( () => this.props.history.push('/clients') )
+        jobService.removeJob(id)
+          .then( () => this.props.history.push('/jobs') )
             .catch( err => console.log(err));
       }
 
 
     render() {
+      // console.log('this.state(editjob)',this.state)
         return (
             <div>
             <button className="buttonMini" onClick={this.toggleForm}>Edit Job</button>
@@ -57,12 +59,11 @@ export class EditJob extends Component {
         <form onSubmit={this.handleFormSubmit}>
           <input type="text" name="title" placeholder="Title" value={this.state.title} onChange={this.handleChange}/>
           <input type="text" name="description" placeholder="Description" value={this.state.description} onChange={this.handleChange} />
-          <input type="text" name="description" placeholder="Description" value={this.state.description} onChange={this.handleChange} />
           <input name="price" placeholder='Price' value={this.state.price} onChange={ (e) => this.handleChange(e)} />
           <input name="amountpaid" placeholder='Paid' value={this.state.amountpaid} onChange={ (e) => this.handleChange(e)} />
-          <input type="range" min="0" max="5" step="1" name="progress" value={this.state.progress} onChange={ (e) => this.handleChange(e)} />
+          <Slider progress = {this.state.progress} onChange={ (e) => this.handleChange(e)} changeProgress={this.onChangeProgress}/>
           <input type="submit" value="Update" />
-          <button className="button" onClick={() => this.deleteClient()}> Delete client </button>
+          <button className="button" onClick={() => this.deleteJob()}> Delete Job </button>
         </form>
         </div>)
       }

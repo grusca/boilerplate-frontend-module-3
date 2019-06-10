@@ -30,7 +30,7 @@ class Slider extends Component {
   
     return (
       <div className="flex-container-slider">
-        <input type="range" min="0" max="5" step="1" name="progress"
+        <input className="input" type="range" min="0" max="5" step="1" name="progress"
          value={this.props.progress} onChange={ this.onChangeProgress} />
           <span className="value" style={style}></span>
         <h3>{text}</h3>       

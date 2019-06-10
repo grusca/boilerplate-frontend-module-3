@@ -4,7 +4,6 @@ import ClientList from "../components/clients/ClientList";
 import { Link } from "react-router-dom";
 
 
-
 class Client extends Component {
   render() {
     const { user } = this.props;
@@ -14,7 +13,7 @@ class Client extends Component {
         <h1> {user.username}</h1>
         <h2>Your Clients</h2>
         </div>
-        <ClientList/>
+        <ClientList user={user}/>
         <Link to={'/private'}> <button className="button">Back</button> </Link>
       </div>
     );

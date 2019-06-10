@@ -37,7 +37,6 @@ class ClientDetails extends Component {
 
   getSingleClient = () => {
     const { id } = this.props.match.params;
-    // Get Client
     clientService.getClient(id)
       .then( (apiResponse) =>{
         const theClient = apiResponse.data;
@@ -46,7 +45,7 @@ class ClientDetails extends Component {
       .catch( err => console.log(err));
   }
   
-  
+
   render() {
     return (
       <div>
@@ -56,11 +55,7 @@ class ClientDetails extends Component {
           <p className="contactinfo"> {this.state.email} </p>
         </div>
 
-
-
-        { this.renderEditForm() }   {/* Render the form in here */}
-
-
+        { this.renderEditForm() }
         { this.renderAddJobForm() }
 
         { 

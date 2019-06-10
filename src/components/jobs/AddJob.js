@@ -47,9 +47,9 @@ class AddJob extends Component {
           :
           (<div>
             <form>
-              <input type="text" name="title" placeholder='Title' value={this.state.title} onChange={ (e) => this.handleChange(e)}/>
-              <input name="description" placeholder='Description' value={this.state.description} onChange={ (e) => this.handleChange(e)} />
-              <input name="price" placeholder='Price' value={this.state.price} onChange={ (e) => this.handleChange(e)} />
+              <input className="input" type="text" name="title" placeholder='Title' value={this.state.title} onChange={ (e) => this.handleChange(e)}/>
+              <input className="input" name="description" placeholder='Description' value={this.state.description} onChange={ (e) => this.handleChange(e)} />
+              <input className="input" name="price" placeholder='Price' value={this.state.price} onChange={ (e) => this.handleChange(e)} />
               <Slider progress = {this.state.progress} onChange={ (e) => this.handleChange(e)} changeProgress={this.onChangeProgress}/>
               <button className="button" onClick={this.handleFormSubmit}>Submit</button>
             </form>
