@@ -1,7 +1,7 @@
-/* body{
+body{
     margin: 0;
     padding: 0;
-} */
+}
 
 .logo {
     width: 180px;
@@ -26,7 +26,9 @@ body {
 
 h1{
     font-family: 'Pridi', serif;
-    color: #00b8de;
+    background: -webkit-linear-gradient(right,#1ddeb6 0,#02aaff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     font-size: 40px;
     margin-top: 0px;
 }
@@ -334,4 +336,10 @@ input[type=range] {
 
 .contactinfoTitle {
     margin-bottom: 14px;
+}
+
+.fas {
+    background: -webkit-linear-gradient(right, #03a9f4, #00afee, #00b4e7, #00b8de, #00bcd4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
