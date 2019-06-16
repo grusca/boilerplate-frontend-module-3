@@ -26,7 +26,7 @@ class JobStatus extends Component {
 
   render(){
     return(
-      <div>
+      <div className="clientPage">
         {/* <h1>{this.props.client}</h1> */}
         <div className="jobtitle">
         <h2>JOB DETAILS</h2>

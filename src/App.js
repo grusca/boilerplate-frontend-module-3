@@ -24,7 +24,7 @@ class App extends Component {
   render() {
     return (
       <AuthProvider>
-        <div className="container">
+        <div>
           <Switch>
             <AnonRoute exact path="/" component={Home} />
             <AnonRoute path="/signup" component={Signup} />

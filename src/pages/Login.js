@@ -24,8 +24,10 @@ class Login extends Component {
     const { username, password } = this.state;
     return (
       <div className='signup'>
+        <div className="blob"></div>
         <Link to={"/"}><img src={logo} className="logo" alt="Logo"/></Link>
         <h1> status </h1>
+        
         <form onSubmit={this.handleFormSubmit}>
           <div className='inputContainer'>
             <i className="fas fa-user"/>

@@ -4,6 +4,8 @@ import clientService from '../../lib/client-service';
 import { Link } from 'react-router-dom';
 import EditClient from './EditClient';
 import AddJob from './../jobs/AddJob';
+import Navbar from '../Navbar';
+
 
 class ClientDetails extends Component {
   constructor(props){
@@ -48,12 +50,14 @@ class ClientDetails extends Component {
 
   render() {
     return (
-      <div>
+      <div className="clientPage">
         <div className="pageTitle">
           <h1 className="contactinfoTitle"> {this.state.firstname} {this.state.lastname} </h1>
           <p className="contactinfo"> {this.state.phonenumber} </p>
           <p className="contactinfo"> {this.state.email} </p>
         </div>
+
+        <div className="container"> 
 
         { this.renderEditForm() }
         { this.renderAddJobForm() }
@@ -71,7 +75,8 @@ class ClientDetails extends Component {
             )
           })
         }
-        <Link to={'/clients'}> <button className="button">Back</button> </Link>
+        </div>
+        <Navbar/>
       </div>
     )
   }

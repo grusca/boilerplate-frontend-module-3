@@ -34,13 +34,12 @@ class JobDetails extends Component {
 
   render(){
     return(
-      <div>
-        {/* <h1>{this.props.client}</h1> */}
-        <div className="jobtitle">
-        <h1 className="contactinfoTitle">Job Details</h1>
-        <p className="contactinfo">{this.state.title}</p>
-        <p className="contactinfo">{this.state.description}</p>
+      <div className="clientPage">
+        <div className="pageTitle">
+          <h1 className="contactinfo">{this.state.title}</h1>
+          <p className="contactinfo">{this.state.description}</p>
         </div>
+        <div className="container">
         <ProgressBar getProgress={this.state.progress}/>
         <div className="priceCard">
           <div className="price">
@@ -62,7 +61,9 @@ class JobDetails extends Component {
         </div>
         {/* { this.renderEditForm() } */}
         <button className="button" onClick={this.props.history.goBack} >Go Back</button>
+        </div>
       </div>
+
     )
   }
 }

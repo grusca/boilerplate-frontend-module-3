@@ -1,3 +1,26 @@
+
+ @-webkit-keyframes rotate-center {
+    0% {
+      -webkit-transform: rotate(0);
+              transform: rotate(0);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+              transform: rotate(360deg);
+    }
+  }
+  @keyframes rotate-center {
+    0% {
+      -webkit-transform: rotate(0);
+              transform: rotate(0);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+              transform: rotate(360deg);
+    }
+  }
+  
+
 body{
     margin: 0;
     padding: 0;
@@ -10,6 +33,20 @@ body{
     margin-right: auto;
     margin-top:50px;
 }
+
+
+.blob {
+    position: fixed;
+    z-index: -1;
+    height: 700px;
+    width: 700px;
+    background-image: linear-gradient(to right, #03a9f4, #00afee, #00b4e7, #00b8de, #00bcd4);
+    border-radius: 39% 61% 49% 51% / 69% 79% 21% 31%;
+    -webkit-animation: rotate-center 30s linear infinite forwards;
+    animation: rotate-center 30s linear infinite forwards;
+}
+
+
 
 .profileimage {
     width: 180px;
@@ -26,9 +63,7 @@ body {
 
 h1{
     font-family: 'Pridi', serif;
-    background: -webkit-linear-gradient(right,#1ddeb6 0,#02aaff 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color:white;
     font-size: 40px;
     margin-top: 0px;
 }
@@ -102,16 +137,33 @@ h6{
 }
 
 .pageTitle {
-    margin-top: 40px;
-    margin-left: 30px;
-    margin-bottom: 30px;
+    background-image: linear-gradient(to right, #03a9f4, #00afee, #00b4e7, #00b8de, #00bcd4);
+    border-radius: 0% 0% 50% 50% / 0% 0% 15% 35% ;
+    height: 180px;
+    width: 100%;
+    position:fixed;
+    top: 0;
+    padding-top: 25px;
+    padding-left: 30px;
+    z-index: 1;
+}
 
+.clientPage {
+    margin-top: 240px;
+    margin-bottom: 50px;
 }
 
 form {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+ 
 }
 
 .input {
@@ -177,11 +229,11 @@ a:visited {
 display: flex;
 align-items: center;
 height: 50px;
-margin: 0px 25px;
+margin: 5px 30px;
 padding: 10px 20px;
 box-shadow: rgba(0,0,0,.1) 6px 6px 10px 1px;
 border-radius: 10px;
-max-width: 700px;
+width: 260px;
 }
 
 .clientName {
@@ -192,11 +244,11 @@ max-width: 700px;
     display: flex;
     align-items: center;
     height: 50px;
-    margin: 10px 20px;
+    margin: 10px 0;
     padding: 10px 20px;
     box-shadow: rgba(0,0,0,.1) 6px 6px 10px 1px;
     border-radius: 10px;
-    max-width: 700px;
+    width: 260px;
 }
 
 .priceCard {
@@ -204,11 +256,9 @@ max-width: 700px;
     flex-direction: row;
     justify-content: space-around;
     color:white;
-    margin: 30px 25px;
+    margin: 30px 0px;
     margin-bottom: 30px;
-
-    
-
+    width: 300px;
 }
 
 .price{
@@ -220,8 +270,6 @@ max-width: 700px;
     border-radius: 12px;
     box-shadow: rgba(0,0,0,.1) 6px 6px 10px 1px;
     background-image: linear-gradient(to right top, #5e35b1, #6f33b2, #7f2fb2, #8e2cb1, #9c27b0);
-
-
 }
 
 .client{
@@ -232,7 +280,7 @@ max-width: 700px;
 }
 
 .flex-container {
-    width: 360px;
+    width: 310px;
     border-radius: 20px;
     background-color: whitesmoke;
     box-shadow: rgba(0,0,0,.1) 6px 6px 10px 1px;
@@ -246,7 +294,7 @@ max-width: 700px;
 
 .progress {
   color: #f80;
-  width: 300px;
+  width: 280px;
   height: 24px;
   background-color: whiteSmoke;
   position: relative;
@@ -343,3 +391,63 @@ input[type=range] {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
+
+.profileStats {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    color:white;
+    padding-right: 30px;
+    margin: 30px 25px;
+    margin-bottom: 30px;
+}
+
+.stats{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70px;
+    height: 60px;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+
+.navbar {
+    border-radius: 5px 5px 0px 0px;
+    position: fixed;
+    z-index: 1;
+    background-color: white;
+    width: 100%;
+    height: 50px;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    -webkit-box-shadow: 0px -5px 17px -2px rgba(166,172,175,0.5);
+    -moz-box-shadow: 0px -5px 17px -2px rgba(166,172,175,0.5);
+    box-shadow: 0px -5px 17px -2px rgba(166,172,175,0.5);
+
+}
+
+.navItem {
+    height: 100%;
+    width: 25%;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    color: -webkit-linear-gradient(right, #03a9f4, #00afee, #00b4e7, #00b8de, #00bcd4);
+}
+
+.icon {
+    font-size: 24px;
+    color:#424949;
+    margin-top:4px;
+}
+
+

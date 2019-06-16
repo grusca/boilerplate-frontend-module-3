@@ -27,7 +27,7 @@ class ClientList extends Component {
     const { listOfClients } = this.state;
 
     return(
-      <div>         {/* After adding a clients,we will GET all clients again from API  */}
+      <div className="container">         {/* After adding a clients,we will GET all clients again from API  */}
         <AddClient getData={this.getAllClients} user={this.props.user}/>   
         <div className="client">
           { 
